@@ -1,12 +1,11 @@
  //declare bacteria variables here
  Bacteria [] colony;  
- PImage webImg;
+ PImage img;
  void setup()   
  {     
  	size(600,500);
  	frameRate(20);
- 	String url = "http://i1-news.softpedia-static.com/images/news-700/Matt-Bomer-for-Christian-Grey-Role-Instead-of-Charlie-Hunnam-Fans-Plead-Online.jpg";
- 	webImg=loadImage(url, "jpg");
+ 	img=loadImage("mattbomer.jpg");
  	colony = new Bacteria[50];
  	for(int i=0; i<colony.length; i++)
  	{
@@ -15,7 +14,7 @@
  }   
  void draw()   
  {  
- 	image(webImg,0,0,600,500);
+ 	image(img,0,0,600,500);
  	for(int i=0; i<colony.length; i++)
  	{
  		colony[i].move();
