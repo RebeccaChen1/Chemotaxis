@@ -1,7 +1,23 @@
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class Chemotaxis extends PApplet {
+
  //declare bacteria variables here
  Bacteria [] colony;  
  PImage webImg;
- void setup()   
+ public void setup()   
  {     
  	size(600,500);
  	frameRate(20);
@@ -13,7 +29,7 @@
  	colony[i] = new Bacteria((int)(Math.random()*500),(int)(Math.random()*500));
  	}
  }   
- void draw()   
+ public void draw()   
  {  
  	image(webImg,0,0,600,500);
  	for(int i=0; i<colony.length; i++)
@@ -35,7 +51,7 @@
  		myY=y;
  		myColor = (int)(Math.random()*255);
  	}   
- 	void move()
+ 	public void move()
  	{
  		if(myX<mouseX)
  		{
@@ -61,9 +77,18 @@
  		}
  		
   	}
- 	void show()
+ 	public void show()
  	{
  		fill(myColor,myColor,myColor);
- 		ellipse(myX,myY,10,10);
+ 		ellipse(webImg,myX,myY,10,10);
  	}
  } 
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "Chemotaxis" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
+  }
+}
