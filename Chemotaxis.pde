@@ -1,11 +1,9 @@
  //declare bacteria variables here
  Bacteria [] colony;  
- PImage img;
  void setup()   
  {     
  	size(600,500);
  	frameRate(20);
- 	img=loadImage("mattbomer.jpg");
  	colony = new Bacteria[50];
  	for(int i=0; i<colony.length; i++)
  	{
@@ -18,7 +16,7 @@
  	for(int i=0; i<colony.length; i++)
  	{
  		colony[i].move();
- 	    colony[i].show();
+ 	 colony[i].show();
  	}
  	//move and show the bacteria   
  }  
